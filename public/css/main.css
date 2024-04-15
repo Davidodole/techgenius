@@ -1,0 +1,124 @@
+.second-main{
+    background-image: linear-gradient(rgba(255, 255, 255, 0.822), rgba(255, 255, 255, 0.838)), url("../image/img2.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 62dvh;
+}
+.quote{
+    padding: 10em 5% 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-between;
+}
+.quote h2, .quote h5{
+    color: rgb(231, 76, 76);
+    font-weight: 400;
+}
+.quote .wrap-quote-form{
+    max-width: 500px;
+    width: 100%;
+    min-width: 400px;
+    background-color: #fff;
+    padding: 3em 50px;
+}
+.wrap-quote-form p{
+    color: #333;
+}
+.wrap-quote-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.wrap-quote-form form input{
+    line-height: 2;
+    padding: 7px 10px;
+    outline: none;
+    color: #666;
+    border-radius: px;
+    box-shadow: 0 0 .2em #777;
+    border: none;
+}
+.wrap-quote-form textarea{
+    border: none;
+    box-shadow: 0 0 .2em #777;
+    padding: 20px 15px;
+}
+.wrap-quote-form button{
+    width: 120px;
+    padding: 9px 10px;
+    background-color: rgb(231, 76, 76);
+    color: #fff;
+    margin-top: 20px;
+    font-size: 20px;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+}
+.quote .content-quote{
+    padding-top: 30px;
+    display: grid;
+    gap: 30px;
+}
+.quote .content-quote p{
+    color: #555;
+}
+.quote  .wrap-quote{
+    max-width: 500px;
+    min-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-top: 1em;
+    gap: 40px;
+}
+.quote-card i{
+    font-size: 40px;
+    font-weight: 200;
+    color: rgb(231, 76, 76);
+}
+.quote-card .quote-icon{
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+}
+.quote .quote-card{
+    display: flex;
+    gap: 3em;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* MEDIA QUERIES */
+@media  screen and (max-width: 900px) {
+    .second-main{
+        background-image: linear-gradient(rgba(255, 255, 255, 0.804), rgba(255, 255, 255, 0.788)), url("../image/img2.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 50dvh;
+    }
+}
+
+
+
+
+
+
+
+@media  screen and (max-width: 600px) {
+    .quote .wrap-quote-form{
+        width: 100%;
+        background-color: #fff;
+        padding: 1em 20px;
+    }
+}
