@@ -20,15 +20,15 @@ a{
 }
 body,html{
     height: 100%;
-    width: 100%;
 }
 body{
+    /* overflow-x: hidden; */
     text-size-adjust: 100%;
 }
 .card {
     animation: scrollIn linear;
     animation-duration: 1ms;
-    animation-range: cover 0% cover 25%;
+    animation-range: cover 0% cover 20%;
     animation-timeline: view();
 }
 p{
@@ -100,7 +100,7 @@ p{
     border: 1px solid rgb(210, 17, 17);
 }
 .login-route span{
-    color: hsl(0, 0%, 100%);
+    color: rgb(255, 255, 255);
     font-size: 3em;
     position: absolute;
     top: 20px;
@@ -177,6 +177,7 @@ nav li:hover{
 .second_container .wrap{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .second_container .content{
     max-width: 500px;
@@ -204,6 +205,31 @@ nav li:hover{
     color: var(--fourtTextColor);
     line-height: 2;
     font-size: 15px;
+}
+.second_container .gallery{
+    display: flex;
+    position: relative;
+    height: 100%;
+    padding: 8em 20px;
+}
+.gallery .card span{
+    font-size: 10px;
+}
+.gallery .card{
+    position: relative;
+    width: 150px;
+    height: 180px;
+    display: flex;
+    border-radius: 7px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    gap: 20px;
+    color: rgb(210, 17, 17);
+}
+.gallery i{
+    font-size: 1.5em;
 }
 
 /* third container  */

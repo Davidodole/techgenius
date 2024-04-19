@@ -1,0 +1,16 @@
+CREATE TABLE userstable (
+    id SERIAL PRIMARY KEY,
+    fullname VARCHAR(255) NOT NULL,
+    username VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE quoteform(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    number VARCHAR(50) NOT NULL,
+    website VARCHAR(100),
+    budget MONEY NOT NULL,
+    info VARCHAR(10000) NOT NULL
+);
