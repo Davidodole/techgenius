@@ -1,7 +1,8 @@
 const button = document.querySelector("nav button"),
         navbar = document.getElementById("navbar"),
         close = document.getElementById("close"),
-        loginUser = document.getElementById("usersForm")
+        loginUser = document.getElementById("usersForm"),
+        preloader = document.getElementById("preloader"),
         user = document.getElementById("userLogin");
 
 button.addEventListener("click",()=>{
@@ -13,4 +14,9 @@ user.addEventListener("click", ()=>{
 close.addEventListener("click",
 function closeUser(){
     loginUser.classList.remove("show")
-})
+});
+
+// PRELOADER
+window.addEventListener("load",()=>{
+    preloader.style.display = "none";
+});

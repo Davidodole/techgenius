@@ -141,5 +141,5 @@ passport.deserializeUser((user, cb)=>{
 
 
 app.listen(PORT, (req,res)=>{
-    console.log(`http://localhost:${PORT}`);
+    console.log(`http://127.0.0.1:${PORT}`);
 });
