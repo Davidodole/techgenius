@@ -3,7 +3,10 @@ const button = document.querySelector("nav button"),
         close = document.getElementById("close"),
         loginUser = document.getElementById("usersForm"),
         preloader = document.getElementById("preloader"),
-        user = document.getElementById("userLogin");
+        user = document.getElementById("userLogin"),
+        btn = document.getElementById("submit"),
+        popup = document.querySelector(".popup"),
+        body = document.body;
 
 button.addEventListener("click",()=>{
     navbar.classList.toggle("open");
@@ -19,4 +22,10 @@ function closeUser(){
 // PRELOADER
 window.addEventListener("load",()=>{
     preloader.style.display = "none";
+});
+
+btn.addEventListener("submit", (e)=>{
+    setInterval(()=>{
+        popup.style.transform.scale = "1";
+    }, 5000)
 });

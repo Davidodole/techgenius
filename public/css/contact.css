@@ -19,6 +19,9 @@
     font-weight: 400;
     padding-bottom: 20px;
 }
+.wrap-form .popup-content h1{
+    color: #fff !important;
+}
 .wrap-form form{
     display: flex;
     padding-top: 10px;

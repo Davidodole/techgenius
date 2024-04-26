@@ -30,6 +30,7 @@
 }
 .wrap-project .project{
     max-width: 600px;
+    width: 100%;
     justify-content: center;
     gap: 15px;
     align-items: center;

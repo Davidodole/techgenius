@@ -8,21 +8,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <!-- awesome fonticon script  -->
-    <script src="https://kit.fontawesome.com/7e2914c8cf.js" crossorigin="anonymous" defer></script>
-    <script src="index.js" defer></script>
 </head>
 <body>
     
     <!-- PRELOADER FOR LOADING WEBSITE  -->
-    <div class="preloader" id="preloader">
+    <!-- <div class="preloader" id="preloader">
         <div class="loader"></div>
         <span>LOADING...</span>
-    </div>
+    </div> -->
     <!-- the login for users  -->
 
     <div class="login-route" id="usersForm">
         <span id="close">&times;</span>
-        <form action="" method="post">
+        <form action="/quote">
         <h1>Please Sign Up</h1>
         <input type="text" name="fName" placeholder="Your Name" autocomplete="off">
         <input type="email" name="username" id="email" autocomplete="off" placeholder="Email Address">
@@ -34,11 +32,7 @@
 
         <!-- navigation bar  -->
     <nav>
-        <a href="/">
-            <div class="logo">
-                <span>TechGenius</span>
-            </div>
-        </a>
+        <a href="/"><span>TechGenius</span></a>
         <ul id="navbar">
             <li><a href="/#who">who we are</a></li>
             <li><a href="/#wedo">what we do</a></li>

@@ -9,6 +9,9 @@ const LocalStrategy  = require("passport-local").Strategy
 const pg = require("pg");
 const saltRound = 10;
 const PORT = process.env.PORT || 3000;
+const nodEmailer = require("nodemailer");
+const currentDate = new Date();
+
 
 // DATABASE CONNECTION 
 const db = new pg.Client({
@@ -39,21 +42,6 @@ app.use(passport.session());
 
 // HANDLING THE POST ROUTE OF THE WEBSITE 
 
-app.post("*", async (req, res)=>{
-    const name = req.body.fName;
-    const username = req.body.username;
-    const password = req.body.password;
-
-                bcrypt.hash(password, saltRound, (err, hash)=>{
-                    if(err) throw err;
-                    const userData = db.query(
-                        "INSERT INTO userfile (name, username, password) VALUES($1, $2, $3)",
-                        [name, username, hash]
-                    ).then(console.log("saved"));
-                    res.redirect("/quote");
-                })
-});
-
 app.post("/quote", (req, res)=>{
     const name = req.body.name;
     const email = req.body.email;
@@ -66,7 +54,44 @@ app.post("/quote", (req, res)=>{
         "INSERT INTO quoteform (name, email, number, website, budget, info) VALUES($1,$2,$3,$4,$5,$6)",
         [name, email, number, url, budget, info]
     );
-    res.send("sent")
+    // setting a email transporter 
+        const transporter = nodEmailer.createTransport({
+        service: "gmail",
+        host: "smtp.gmail.com",
+        port: 587,
+        secure: false,
+        auth: {
+            user: process.env.API_GMAIL,
+            pass: process.env.API_PASSWORD,
+        }
+        });
+        const mailOptions = {
+        from: {
+            name: "TechGenius",
+            address: process.env.API_GMAIL,
+        },
+        to: email,
+        subject: "You've just send your Quotation",
+        html: `<h3>Thank you for patronizing us</h3>
+        <p>We will get back to you as soon as possible to bring your dream to live </p>
+        <p>This is the time youn send us the mail : ${currentDate.toDateString()}</P>
+        <p> ${currentDate.getTime()}</p>
+        `
+        }
+        transporter.sendMail(mailOptions, (err, info)=>{
+            if(err) throw err;
+        });
+    
+        // REDIRECT TO  THE HOME ROUTE 
+        res.redirect("/quote");
+})
+app.post("/contact",(req, res)=>{
+    let name = req.body.name;
+    let email = req.body.email;
+    let tel = req.body.tel;
+    let info = req.body.info;
+    console.log(name, email, tel, info);
+    res.redirect("/contact")
 })
 
 

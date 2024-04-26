@@ -3,6 +3,13 @@
 <link rel="stylesheet" href="css/main.css">
 
 <div class="quote">
+
+    <div class="popup">
+        <div class="popup-content">
+            <h1>Thanks for contacting TechGenius we'll surely get back to you as soon as possible</h1>
+        </div>
+    </div>
+    
     <div class="wrap-quote">
         <div>
         <h2>GET A QUOTE</h2>
@@ -40,13 +47,13 @@
         <h2>QUOTE FORM</h2>
         <p>Use the form below to tell us about your project</p>
         <form action="" method="post">
-            <input type="text" placeholder="Name" autocomplete="on" name="name">
-            <input type="email" placeholder="Email" autocomplete="on" name="email">
-            <input type="tel" placeholder="Phone Address" autocomplete="on" name="number">
-            <input type="url" placeholder="Current Website" autocomplete="on" name="url">
-            <input type="text" placeholder="Budget" name="budget">
-            <textarea spellcheck="true" id="" cols="50" rows="15" name="info"></textarea>
-            <button>Send</button>
+            <input type="text" placeholder="Name" autocomplete="on" name="name" required>
+            <input type="email" placeholder="Email" autocomplete="on" name="email" required>
+            <input type="tel" placeholder="Phone Address" autocomplete="on" name="number" required>
+            <input type="url" placeholder="Current Website" autocomplete="on" name="url" required>
+            <input type="text" placeholder="Budget" name="budget" required>
+            <textarea spellcheck="true" id="" cols="50" rows="15" name="info" required></textarea>
+            <button id="submit">Send</button>
         </form>
     </div>
 </div>

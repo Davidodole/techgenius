@@ -3,17 +3,22 @@
     <link rel="stylesheet" href="css/contact.css">
 
     <div class="wrap-form">
+        <div class="popup">
+            <div class="popup-content">
+                <h1>Thanks for contacting TechGenius we'll surely get back to you as soon as possible</h1>
+            </div>
+        </div>
         <div class="form-content">
         <h1>CONTACT US</h1>
         <p>If you'd like to talk to us, please use the form below to get in touch. We'd love to hear from you and someone from our team will be in touch as soon as possible.</p>
-        <form action="" method="post">
-            <input type="text" placeholder="Name">
+        <form action="/contact" method="post">
+            <input type="text" placeholder="Name" required name="name">
             <div style="display: flex;justify-content: space-between; gap: 10px;">
-            <input type="email" placeholder="Email Address" style="width: 50%;">
-            <input type="tel" placeholder="Phone Number" style="width: 50%;">
+            <input type="email" placeholder="Email Address" style="width: 50%;" required name="email">
+            <input type="tel" placeholder="Phone Number" style="width: 50%;" required name="tel">
             </div>
-            <textarea name="" id="" cols="50" rows="15"></textarea>
-            <button>Message</button>
+            <textarea id="" cols="50" rows="15" required name="info"></textarea>
+            <button id="submit">Message</button>
         </form>
         </div>
         <div class="mail-address">
