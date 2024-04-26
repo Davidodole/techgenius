@@ -8,7 +8,7 @@ require("dotenv").config()
 const LocalStrategy  = require("passport-local").Strategy
 const pg = require("pg");
 const saltRound = 10;
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 const nodEmailer = require("nodemailer");
 const currentDate = new Date();
 
@@ -165,6 +165,6 @@ passport.deserializeUser((user, cb)=>{
 
 
 
-app.listen(PORT, (req,res)=>{
-    console.log(`http://127.0.0.1:${PORT}`);
+app.listen(port, (req,res)=>{
+    console.log(`listening to port ${port}`);
 });
