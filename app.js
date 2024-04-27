@@ -11,6 +11,7 @@ const saltRound = 10;
 const port = process.env.PORT || 3000;
 const nodEmailer = require("nodemailer");
 const currentDate = new Date();
+const {sequelize} = require("sequelize")
 
 
 // DATABASE CONNECTION 
