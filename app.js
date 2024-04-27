@@ -122,37 +122,37 @@ app.get("/contact",(req, res)=>{
 
 
 // local login passport.strategies 
-// passport.use(
-//     "local",
-//     new LocalStrategy( async(fName, username, password, cb)=>{
-//         console.log(fName, username, password);
-//         try{
-//             const userRow = await db.query(
-//                 "SELECT * FROM userstable WHERE username = $1",
-//                 [username],
-//             );
-//             if(userRow.rows.length > 0){
-//                 const userID = userRow.rows[0]
-//                 const hashed = userID.password;
-//                 bcrypt.compare(password, hashed, (err, result)=>{
-//                     if(err){
-//                         cb(err)
-//                     }else{
-//                         if(result){
-//                             return cb(null, userID);
-//                         }else{
-//                             return cb("please check your email or password");
-//                         }
-//                     }
-//                 });
-//             }else{
-//                 return cb(null, false);
-//             }
-//         }catch (error){
-//             cb(error)
-//         }
-//     })
-//     );
+passport.use(
+    "local",
+    new LocalStrategy( async(fName, username, password, cb)=>{
+        console.log(fName, username, password);
+        try{
+            const userRow = await db.query(
+                "SELECT * FROM userstable WHERE username = $1",
+                [username],
+            );
+            if(userRow.rows.length > 0){
+                const userID = userRow.rows[0]
+                const hashed = userID.password;
+                bcrypt.compare(password, hashed, (err, result)=>{
+                    if(err){
+                        cb(err)
+                    }else{
+                        if(result){
+                            return cb(null, userID);
+                        }else{
+                            return cb("please check your email or password");
+                        }
+                    }
+                });
+            }else{
+                return cb(null, false);
+            }
+        }catch (error){
+            cb(error)
+        }
+    })
+    );
 
 passport.serializeUser((user, cb)=>{
     return cb(null, user);
