@@ -58,29 +58,29 @@ app.post("/quote", (req, res)=>{
     // setting a email transporter 
         const transporter = nodEmailer.createTransport({
         service: "gmail",
-        host: "smtp.gmail.com",
-        port: 587,
-        secure: false,
+        host: "smtp.ethereal.email",
+        port: 465,
+        secure: true,
         auth: {
-            user: process.env.API_GMAIL,
+            user: email,
             pass: process.env.API_PASSWORD,
         }
         });
         const mailOptions = {
         from: {
-            name: "TechGenius",
+            name: "Sending you this new job",
             address: process.env.API_GMAIL,
         },
-        to: email,
+        to: process.env.API_GMAIL,
         subject: "You've just send your Quotation",
-        html: `<h2>Thank you for patronizing us</h2>
-        <p>We will get back to you as soon as possible to bring your dream to live </p>
-        <p>This is the time you send us the mail : ${currentDate.toDateString()}</P>
-        <p> ${currentDate.getTime()}</p>
+        html: `<h2>Please check and give me a feedback!</h2>
+        <p>${info}</p>
+        <p>This is the time you send us the mail : ${currentDate.getDate()}</P>
         `
         }
         transporter.sendMail(mailOptions, (err, info)=>{
             if(err) throw err;
+            console.log("Email has been sent!");
         });
     
         // REDIRECT TO  THE HOME ROUTE 
@@ -91,7 +91,7 @@ app.post("/contact",(req, res)=>{
     let email = req.body.email;
     let tel = req.body.tel;
     let info = req.body.info;
-    console.log(name, email, tel, info);
+    console.log(process.env);
     res.redirect("/contact")
 })
 
@@ -102,7 +102,7 @@ app.get("/",(req, res)=>{
     res.render("index")
 });
 // QUOTE ROUTE 
-app.get("/quote",(req, res)=>{
+app.get("/quote", (req, res)=>{
     res.render("quote")
 });
 // PORTFOLIO ROUTE 
