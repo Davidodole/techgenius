@@ -44,6 +44,7 @@
     border: none;
     box-shadow: 0 0 .2em #777;
     padding: 20px 15px;
+    outline: none;
 }
 .wrap-quote-form button{
     width: 120px;

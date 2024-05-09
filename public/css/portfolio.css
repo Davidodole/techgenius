@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100dvh;
+    height: 90dvh;
 }
 .featured-project{
     padding: 10em 5%;
@@ -25,7 +25,6 @@
     justify-content: space-evenly;
     align-items: center;
     gap: 30px;
-    flex-wrap: wrap;
     padding: 20px 0;
 }
 .wrap-project .project{
@@ -53,4 +52,13 @@
 }
 #project_image{
     padding: 13em 0 0;
+}
+
+
+
+@media  screen and (max-width: 900px) {
+    .image-top{
+        display: none;
+    }
+
 }

@@ -4,9 +4,12 @@ const button = document.querySelector("nav button"),
         loginUser = document.getElementById("usersForm"),
         preloader = document.getElementById("preloader"),
         user = document.getElementById("userLogin"),
-        btn = document.getElementById("submit"),
-        popup = document.querySelector(".popup"),
-        body = document.body;
+        // btn = document.getElementById("submit"),
+        // popup = document.querySelector(".popup"),
+        scroll = document.getElementById("scroll"),
+        cards = document.querySelectorAll(".card_animate")
+        body = document.body,
+        scroll_animation = document.querySelectorAll("h1");
 
 button.addEventListener("click",()=>{
     navbar.classList.toggle("open");
@@ -20,12 +23,22 @@ function closeUser(){
 });
 
 // PRELOADER
-window.addEventListener("load",()=>{
-    preloader.style.display = "none";
-});
+// window.addEventListener("load",()=>{
+//     preloader.style.display = "none";
+// });
 
-btn.addEventListener("submit", (e)=>{
-    setInterval(()=>{
-        popup.style.transform.scale = "1";
-    }, 5000)
-});
+// ANIMATION 
+const observer = new IntersectionObserver((entries)=>{
+    entries.forEach(entry =>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("animation");
+        }
+    })
+}
+);
+scroll_animation.forEach(animate=>{
+    observer.observe(animate)
+})
+cards.forEach(card=>{
+    observer.observe(card)
+})

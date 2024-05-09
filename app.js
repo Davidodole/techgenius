@@ -5,7 +5,7 @@ const ejs = require("ejs")
 const session = require("express-session");
 const passport = require("passport");
 require("dotenv").config()
-const LocalStrategy  = require("passport-local").Strategy
+const LocalStrategy  = require("passport-local");
 const pg = require("pg");
 const saltRound = 10;
 const port = process.env.PORT || 3000;
@@ -73,9 +73,9 @@ app.post("/quote", (req, res)=>{
         },
         to: email,
         subject: "You've just send your Quotation",
-        html: `<h3>Thank you for patronizing us</h3>
+        html: `<h2>Thank you for patronizing us</h2>
         <p>We will get back to you as soon as possible to bring your dream to live </p>
-        <p>This is the time youn send us the mail : ${currentDate.toDateString()}</P>
+        <p>This is the time you send us the mail : ${currentDate.toDateString()}</P>
         <p> ${currentDate.getTime()}</p>
         `
         }
@@ -167,5 +167,5 @@ passport.deserializeUser((user, cb)=>{
 
 
 app.listen(port, (req,res)=>{
-    console.log(`listening to port ${port}`);
+    console.log(`http://127.0.0.1:${port}`);
 });
