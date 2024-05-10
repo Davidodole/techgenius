@@ -23,7 +23,7 @@ const db = new pg.Client({
     port: process.env.PG_PORT,
 });
 
-db.connect().then(()=> console.log("database connected!"));
+db.connect();
 
 const app = express();
 
@@ -166,6 +166,4 @@ passport.deserializeUser((user, cb)=>{
 
 
 
-app.listen(port, (req,res)=>{
-    console.log(`http://127.0.0.1:${port}`);
-});
+app.listen(port, (req,res)=>{});
