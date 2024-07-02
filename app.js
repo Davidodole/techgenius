@@ -52,9 +52,9 @@ app.post("/quote", (req, res)=>{
         const mailOptions = {
         from: {
             name: "Sending you this new job",
-            address: process.env.API_GMAIL,
+            address: email,
         },
-        to: dola7468@gmail.com,
+        to: "dola7468@gmail.com",
         subject: "You've just send your Quotation",
         html: `<h2>Please check and give me a feedback!</h2>
         <p>${info}</p>
