@@ -23,28 +23,33 @@ app.post("/quote", (req, res)=>{
     const info = req.body.info;
     
     // setting a email transporter 
+    
         const transporter = nodEmailer.createTransport({
         service: "gmail",
         host: "smtp.ethereal.email",
         port: 465,
         secure: true,
         auth: {
-            user: email,
-            pass: 'ThisismySecretfortheusers',
+            user: "dola7468@gmail.com",
+            pass: "fullstack123",
         }
         });
+        
+        
         const mailOptions = {
         from: {
-            name: "Sending you this new job",
+            name: name,
             address: email,
         },
-        to: "dola7468@gmail.com",
+        to: email,
         subject: "You've just send your Quotation",
         html: `<h2>Please check and give me a feedback!</h2>
         <p>${info}</p>
         <p>This is the time you send us the mail : ${currentDate.getDate()}</P>
         `
         }
+        
+        
         transporter.sendMail(mailOptions, (err, info)=>{
             if(err) throw err;
         });
