@@ -1,13 +1,6 @@
-const bcrypt = require("bcrypt");
 const bodyParser = require("body-parser");
 const express = require("express");
-const ejs = require("ejs")
-const session = require("express-session");
-const passport = require("passport");
-require("dotenv").config()
-const LocalStrategy  = require("passport-local");
-const pg = require("pg");
-const saltRound = 10;
+const ejs = require("ejs");
 const port = process.env.PORT || 3000;
 const nodEmailer = require("nodemailer");
 const currentDate = new Date();
@@ -18,15 +11,6 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static("public"));
-app.use(session({
-    secret: process.env.MYSECRET,
-    resave: false,
-    saveUninitialized: false,
-}));
-
-app.use(passport.initialize());
-app.use(passport.session());
-
 
 // HANDLING THE POST ROUTE OF THE WEBSITE 
 
