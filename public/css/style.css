@@ -567,7 +567,7 @@ footer span {
         top: 5em;
     }
     nav{
-        background-image: linear-gradient(rgba(10, 10, 10, 0.596),rgba(10, 10, 10, 0.519));
+        background-image: linear-gradient(rgb(231, 76, 76), rgb(231, 76, 76));
         padding: 14px 5%;
         box-shadow: 0 0 7px 0 #fff;
         z-index: 10000;
@@ -620,22 +620,22 @@ footer span {
     nav ul{
         display: block;
         position: fixed;
-        top: 3.6em;
+        top: 3em;
         right: 0;
-        height: 100vh;
+        height: 100dvh;
         padding: 50px 0;
         width: 0;
-        transition: width 0.9s;
+        transition: width 0.5s;
         z-index: 10000;
         overflow: hidden;
-        background-image: linear-gradient(rgba(10, 10, 10, 0.596),rgba(10, 10, 10, 0.519));
+        background-image: linear-gradient(rgb(231, 76, 76), rgb(231, 76, 76));
     }
     nav .open{
-        width: 250px;
-        transition: width 0.9s;
+        width: 200px;
+        transition: width 0.5s;
     }
     nav button{
-        font-size: 25px;
+        font-size: 20px;
         border: none;
         color: #fff;
         background-color: transparent;
@@ -647,7 +647,7 @@ footer span {
         font-size: 14px;
     }
     nav a:hover{
-        color: var(--textColor);
+        color: darkblue;
     }
     nav .active{
         padding-left: 33px;
