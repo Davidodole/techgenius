@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 *{
     padding: 0;
     margin: 0;
@@ -37,6 +38,9 @@ body{
     animation-duration: 1ms;
     animation-range: cover 0% cover 20%;
     animation-timeline: view();
+}
+.image-logo{
+    width: 30px;
 }
 p{
     letter-spacing: 1px;
@@ -172,6 +176,10 @@ nav{
     justify-content: space-between;
     align-items: center;
     padding: 30px 5%;
+}
+nav span{
+    font-family: "Teko", sans-serif;
+    font-size: 2em;
 }
 nav button{
     display: none;
