@@ -1,4 +1,5 @@
 const button = document.querySelector("nav button"),
+        main = document.getElementById("main"),
         navbar = document.getElementById("navbar"),
         close = document.getElementById("close"),
         loginUser = document.getElementById("usersForm"),
@@ -10,6 +11,8 @@ const button = document.querySelector("nav button"),
         cards = document.querySelectorAll(".card_animate")
         body = document.body,
         scroll_animation = document.querySelectorAll("h1");
+
+  //Adding Evenlistener to the variables declear
 
 button.addEventListener("click",()=>{
     navbar.classList.toggle("open");
