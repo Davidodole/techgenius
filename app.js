@@ -4,6 +4,7 @@ const ejs = require("ejs");
 const port = process.env.PORT || 3000;
 const nodEmailer = require("nodemailer");
 const currentDate = new Date();
+require("dotenv").config();
 
 const app = express();
 
@@ -25,29 +26,34 @@ app.post("/quote", (req, res)=>{
     // setting a email transporter 
     
         const transporter = nodEmailer.createTransport({
-        service: "gmail",
-        host: "smtp.ethereal.email",
+        host: "smtp.gmail.com",
         port: 465,
         secure: true,
         auth: {
             user: "dola7468@gmail.com",
-            pass: "fullstack123",
-        }
+            pass: "oiekymjgnfljwxpq",
+        },
         });
         
         
         const mailOptions = {
         from: {
-            name: name,
-            address: email,
+            name: "DavTech",
+            address: process.env.Email,
         },
         to: email,
-        subject: "You've just send your Quotation",
-        html: `<h2>Please check and give me a feedback!</h2>
-        <p>${info}</p>
-        <p>This is the time you send us the mail : ${currentDate.getDate()}</P>
+        subject: "Thank you for patronizing DavTech",
+        attachments: [{
+          filename: "logo.png",
+          path: "public/image/logo.png",
+          cid: "logo",
+        }],
+        html: `<h2>You've just send your Quotation</h2>
+        <p>Thank you for having trust in us 🙏 we promise never to let you down</p>
+        <p>we will contact you in the next few minutes to give you the estimation of your dream website.</p>
+        <p>This is the time you send us the mail : ${currentDate.toLocaleTimeString()}</P>
         `
-        }
+        };
         
         
         transporter.sendMail(mailOptions, (err, info)=>{
