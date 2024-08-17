@@ -26,12 +26,12 @@ app.post("/quote", (req, res)=>{
     // setting a email transporter 
     
         const transporter = nodEmailer.createTransport({
-        host: "smtp.gmail.com",
-        port: 465,
+        host: process.env.Email_Host,
+        port: process.env.Email_Port,
         secure: true,
         auth: {
-            user: "dola7468@gmail.com",
-            pass: "oiekymjgnfljwxpq",
+            user: process.env.Email,
+            pass: process.env.Password,
         },
         });
         
