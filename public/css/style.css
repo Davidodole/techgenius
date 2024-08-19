@@ -627,7 +627,7 @@ footer span {
     nav {
     position: fixed;
     width: 100%;
-    padding: 10px 5%;
+    padding: 6px 6%;
     }
     nav ul{
         display: block;
@@ -646,12 +646,27 @@ footer span {
         width: 200px;
         transition: width 0.5s;
     }
-    nav button{
-        font-size: 20px;
-        border: none;
-        color: #fff;
-        background-color: transparent;        
-        display: block;
+    nav btn{
+        display: inline-block;
+        cursor: pointer;
+        background: transparent;
+    }
+    .line1,.line2,.line3{
+      width: 25px;
+      height: 3px;
+      border-radius: 30px;
+      background: #fff;
+      margin: 5px 0;
+      transition: 0.3s;
+    }
+    .actived .line1{
+      transform: translate(0px, 11)rotate(45deg);
+    }
+    .actived .line2{
+      opacity: 0;
+    }
+    .actived .line3{
+      transform: translate(0px -15px)rotate(-45deg);
     }
     nav ul a{
         display: block;
