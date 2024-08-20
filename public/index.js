@@ -21,7 +21,6 @@ button.addEventListener("click",()=>{
 document.addEventListener("click", function (e) {
   if (!navbar.contains(e.target) && e.target !== button) {
     navbar.classList.remove("open");
-    
   }
 });
 
@@ -34,9 +33,9 @@ function closeUser(){
 });
 
 // PRELOADER
-// window.addEventListener("load",()=>{
-//     preloader.style.display = "none";
-// });
+    window.addEventListener("load",()=>{
+      preloader.style.display = "none";
+});
 
 // ANIMATION 
 const observer = new IntersectionObserver((entries)=>{

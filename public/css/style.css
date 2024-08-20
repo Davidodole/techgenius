@@ -77,42 +77,93 @@ h1{
 /* PRELOADER  */
 .preloader{
     position: fixed;
-    width: 100%;
     background-color: rgba(255,255,255);
-    overflow: hidden;
-    height: 100%;
-    z-index: 1000000000000;
+    z-index: 1000000;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    
 }
-.preloader span{
-    color: rgb(195, 27, 27);
-    font-size: 20px;
+
+.preloader h1 {
+  margin: 0;
+  padding: 0;
+  font-family: "Teko", sans-serif;
+  font-weight: 500;
+  font-size: 2em;
+  color: var(--textColor);
 }
-.bar{
-    height: 10px;
-    width: 200px;
-    border-radius: 10px;
-    background-color: #f9f6f6;
-    box-shadow: 0 0 .3em #888;
+
+.preloader span {
+  position: relative;
+  top: 0.23em;  
+  display: inline-block;
+  text-transform: uppercase;  
+  opacity: 0;
+  transform: rotateX(-90deg);
 }
-.scroll{
-    height: 100%;
-    /* position: relative; */
-    width: 0;
-    left: 0;
-    border-radius: 10px;
-    background-color: red;
-    animation: slide 5s forwards linear;
+
+.let1 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.2s;
 }
-@keyframes slide {
-    to{
-        width: 100%;
+
+.let2 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.3s;
+}
+
+.let3 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.4s;
+}
+
+.let4 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.5s;
+
+}
+
+.let5 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.6s;
+}
+
+.let6 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.7s;
+}
+
+.let7 {
+  animation: drop 1.5s ease-in-out infinite;
+  animation-delay: 1.8s;
+}
+
+@keyframes drop {
+    10% {
+        opacity: 0.5;
+    }
+    20% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    80% {
+        opacity: 1;
+        top: 3.78em;
+        transform: rotateX(-360deg);
+    }
+    90% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        top: 6.94em
     }
 }
+
 /* LOGIN FORM FOR THE USERS  */
 .login-route{
     display: flex;
@@ -181,7 +232,7 @@ nav span{
     font-family: "Teko", sans-serif;
     font-size: 2em;
 }
-nav button{
+nav .btn{
     display: none;
 }
 ul{
@@ -627,7 +678,7 @@ footer span {
     nav {
     position: fixed;
     width: 100%;
-    padding: 6px 6%;
+    padding: 6px 5%;
     }
     nav ul{
         display: block;
@@ -646,7 +697,7 @@ footer span {
         width: 200px;
         transition: width 0.5s;
     }
-    nav btn{
+    nav .btn{
         display: inline-block;
         cursor: pointer;
         background: transparent;

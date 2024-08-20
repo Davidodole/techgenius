@@ -1,5 +1,6 @@
-<div class="contact-page">
-    <%- include('partials/header') -%>
+<%- include('partials/header') -%>
+  <div class="contact-page">
+
     <link rel="stylesheet" href="css/contact.css">
 
     <div class="wrap-form">
@@ -12,10 +13,10 @@
         <h1>CONTACT US</h1>
         <p>If you'd like to talk to us, please use the form below to get in touch. We'd love to hear from you and someone from our team will be in touch as soon as possible.</p>
         <form action="/contact" method="post">
-            <input type="text" placeholder="Name" required name="name">
+            <input type="text" autocomplete="on" placeholder="Name" required name="name">
             <div style="display: flex;justify-content: space-between; gap: 10px;">
-            <input type="email" placeholder="Email Address" style="width: 50%;" required name="email">
-            <input type="tel" placeholder="Phone Number" style="width: 50%;" required name="tel">
+            <input type="email" autocomplete="on" placeholder="Email Address" style="width: 50%;" required name="email">
+            <input type="tel" autocomplete="on" placeholder="Phone Number" style="width: 50%;" required name="tel">
             </div>
             <textarea id="" cols="50" rows="15" required name="info"></textarea>
             <button id="submit">Message</button>
