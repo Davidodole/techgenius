@@ -33,10 +33,9 @@ function closeUser(){
 });
 
 // PRELOADER
-    window.addEventListener("load",()=>{
-      preloader.style.display = "none";
-});
-
+ window.addEventListener("load",()=>{
+    preloader.style.display = "none";
+  });
 // ANIMATION 
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry =>{
