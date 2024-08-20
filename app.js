@@ -90,7 +90,7 @@ app.post("/contact",(req, res)=>{
             address: process.env.Email,
         },
         to: email,
-        subject: "Thank you for patronizing DavTech",
+        subject: "Thank you for contacting DavTech",
         attachments: [{
           filename: "logo.png",
           path: "public/image/logo.png",
