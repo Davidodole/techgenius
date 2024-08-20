@@ -445,7 +445,7 @@ nav .logo{
     margin: 40px 0 10px;
 }
 .row_wrap .card{
-    box-shadow: 0 1px 10px rgba(49, 49, 49, 0.399);
+    box-shadow: 0 1px 3px rgba(49, 49, 49, 0.399);
     padding: 30px 40px;
     border-radius: 10px;
     /* border: 0 1px 0 1px solid (255,255,255,0.399); */
@@ -751,6 +751,13 @@ footer span {
 
     .main_homepage hr{
         border-top: 2px solid rgb(210, 17, 17);
+    }
+    
+    /* FOURTH */
+    
+    .row_wrap .card{
+      width: 100%;
+      margin: 0;
     }
 
     /* FOOTER  */
