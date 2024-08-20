@@ -748,7 +748,9 @@ footer span {
     /* MAIN HOMEPAGE  */
 
     .main_homepage h1{
-        line-height: 2;
+        line-heightbody {
+          
+        }: 2;
         font-size: 20px;
     }
     .main_homepage P{

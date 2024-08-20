@@ -71,6 +71,43 @@ app.post("/contact",(req, res)=>{
     let tel = req.body.tel;
     let info = req.body.info;
     
+     // setting a email transporter 
+    
+        const transporter = nodEmailer.createTransport({
+        host: process.env.Email_Host,
+        port: process.env.Email_Port,
+        secure: true,
+        auth: {
+            user: process.env.Email,
+            pass: process.env.Password,
+        },
+        });
+        
+        
+        const mailOptions = {
+        from: {
+            name: "DavTech",
+            address: process.env.Email,
+        },
+        to: email,
+        subject: "Thank you for patronizing DavTech",
+        attachments: [{
+          filename: "logo.png",
+          path: "public/image/logo.png",
+          cid: "logo",
+        }],
+        html: `<h2>You've just send your Quotation</h2>
+        <p>Thank you for contacting DavTech your number one custom website builder</p>
+        <p>We responsed shortly please be patient.</p>
+        <p>This is the time you send us the mail : ${currentDate.toLocaleTimeString()}</P>
+        `
+        };
+        
+        
+        transporter.sendMail(mailOptions, (err, info)=>{
+            if(err) throw err;
+        });
+    
     res.redirect("/contact")
 })
 
