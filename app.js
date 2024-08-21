@@ -96,7 +96,7 @@ app.post("/contact",(req, res)=>{
           path: "public/image/logo.png",
           cid: "logo",
         }],
-        html: `<h2>You've just send your Quotation</h2>
+        html: `<h2>We've received your info</h2>
         <p>Thank you for contacting DavTech your number one custom website builder</p>
         <p>We responsed shortly please be patient.</p>
         <p>This is the time you send us the mail : ${currentDate.toLocaleTimeString()}</P>
