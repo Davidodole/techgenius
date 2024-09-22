@@ -270,6 +270,9 @@ nav .logo{
     width: 30px;
     object-fit: cover;
 }
+nav .logo:hover{
+    background: none;
+}
 /* popup ad  */
 .popup{
     width: 350px;
