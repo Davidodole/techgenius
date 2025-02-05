@@ -714,13 +714,13 @@ footer span {
       margin: 5px 0;
       transition: 0.3s;
     }
-    .active .line1{
+    .times .line1{
       transform: translate(0px, 6px) rotateZ(45deg);
     }
-    .active .line2{
+    .times .line2{
       opacity: 0;
     }
-    .active .line3{
+    .times .line3{
       transform: translate(0px, -12px) rotateZ(-45deg);
     }
     nav ul a{

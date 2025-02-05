@@ -16,12 +16,14 @@ const button = document.getElementById("btn"),
   //Adding Evenlistener to the variables decleared
 button.addEventListener("click",()=>{
     navbar.classList.toggle("open");
+    button.classList.toggle("times")
 });
 
 // closing the navigation with outside click
 document.addEventListener("click", function (e) {
   if (!navbar.contains(e.target) && e.target !== button) {
     navbar.classList.remove("open");
+    button.classList.remove("times")
   }
 });
 
