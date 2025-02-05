@@ -8,25 +8,29 @@ const button = document.getElementById("btn"),
         // btn = document.getElementById("submit"),
         // popup = document.querySelector(".popup"),
         scroll = document.getElementById("scroll"),
-        btnIcon = document.querySelectorAll("bar")
+        btnIcon = document.querySelectorAll("bar"),
         cards = document.querySelectorAll(".card_animate"),
         scroll_animation = document.querySelectorAll("h1");
 
 
-  //Adding Evenlistener to the variables declear
-
+  //Adding Evenlistener to the variables decleared
 button.addEventListener("click",()=>{
     navbar.classList.toggle("open");
 });
+
+// closing the navigation with outside click
 document.addEventListener("click", function (e) {
   if (!navbar.contains(e.target) && e.target !== button) {
     navbar.classList.remove("open");
   }
 });
 
+//for login popup
 user.addEventListener("click", ()=>{
     loginUser.classList.add("show")
 });
+// for closing the login popup
+
 close.addEventListener("click",
 function closeUser(){
     loginUser.classList.remove("show")
@@ -36,6 +40,7 @@ function closeUser(){
  window.addEventListener("load",()=>{
     preloader.style.display = "none";
   });
+  
 // ANIMATION 
 const observer = new IntersectionObserver((entries)=>{
     entries.forEach(entry =>{
