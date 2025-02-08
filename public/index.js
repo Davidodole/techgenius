@@ -1,4 +1,5 @@
 const button = document.getElementById("btn"),
+        nav = document.querySelector("nav"),
         main = document.getElementById("main"),
         navbar = document.getElementById("navbar"),
         close = document.getElementById("close"),
@@ -11,6 +12,18 @@ const button = document.getElementById("btn"),
         btnIcon = document.querySelectorAll("bar"),
         cards = document.querySelectorAll(".card_animate"),
         scroll_animation = document.querySelectorAll("h1");
+
+// Adding fixed position to the navbar while scrolling 
+
+window.onscroll = viewNav;
+
+function viewNav() {
+    if (window.pageYOffset > 100) {
+        nav.classList.add("show-nav");
+    }else {
+        nav.classList.remove("show-nav");
+    }
+}
 
 
   //Adding Evenlistener to the variables decleared

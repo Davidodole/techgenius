@@ -3,6 +3,7 @@
 *{
     padding: 0;
     margin: 0;
+    list-style: none;
     box-sizing: border-box;
     font-family: "Roboto Serif", serif;
     scroll-behavior: smooth;
@@ -51,7 +52,7 @@ p{
     animation-timeline: view();
     animation-range-start: cover 0%;
     animation-range-end: cover 30%;
-    animation-duration: 1ms;
+    animation-duration: 1.5ms;
 }
 /* ANIMATION FOR THE WEBSITE  */
 h1{
@@ -223,9 +224,17 @@ h1{
 /* the navigation bar of the website  */
 nav{
     display: flex;
+    background-color: #bbbb;
+    position: absolute;
+    width: 100%;
+    transition: all 0.7s;
     justify-content: space-between;
     align-items: center;
     padding: 10px 5%;
+}
+.show-nav{
+    position: fixed;
+    transition: 0.5s;
 }
 nav span{
     /*font-family: "Teko", sans-serif;/ */
@@ -235,7 +244,7 @@ nav span{
 nav .btn{
     display: none;
 }
-ul{
+nav ul{
     list-style: none;
     display: flex;
     gap: 20px;
@@ -247,6 +256,9 @@ nav a{
     font-family: "Poppins", sans-serif;
     font-weight: 600;
     text-transform: uppercase;
+}
+nav span{
+    color: ;
 }
 nav .active{
     background-color: var(--textColor);
@@ -268,6 +280,11 @@ nav li:hover{
 }
 nav .logo{
     font-size: 1.03em;
+}
+nav .logo-icon{
+    padding: 0;
+    font-size: 1.2em;
+    color: rgba(221, 60, 60);
 }
 nav .logo:hover{
     background: none;
@@ -311,7 +328,7 @@ nav .logo:hover{
 .main_homepage p{
     margin-top: 20px;
     font-weight: 500;
-    animation: scrollIn 0.8s linear;
+    animation: scrollIn 1s linear;
 }
 .main_homepage hr{
     border-top: 4px solid rgb(210, 17, 17);
@@ -583,17 +600,53 @@ nav .logo:hover{
 
 /* footer of the website  */
 footer{
-    display: flex;
-    padding: 6px 5%;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(210, 17, 17);
+    padding: 10% 5% 8%;
+    background-color: #bbbb;
     margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+}
+footer .footer-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+.footer-row h3{
+    width: fit-content;
+    position: relative;
+    font-size: 19px;
+}
+.footer-row h3::before{
+    content: "";
+    width: 50%;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 3px;
+    border-radius: 10px;
+    background-color: rgba(221, 60, 60);
+}
+.footer-row ul{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+}
+.footer-row li{
+    padding: 5px 0;
+}
+.footer-row a{
+    color: #143D60;
 }
 footer span {
-    padding: 10px;
-    opacity: 0.5;
-    color: #fff !important;
+    color: #143D60;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 30px;
+}
+footer .footer-links{
+    display: flex;
+    padding: 20px 0;
+    gap: 10px;
 }
 
 /* animations  */
@@ -632,14 +685,12 @@ footer span {
         top: 5em;
     }
     nav{
-        background-image: linear-gradient(rgb(231, 76, 76), rgb(231, 76, 76));
         padding: 14px 5%;
         box-shadow: 0 0 7px 0 #fff;
         z-index: 10000;
     }
     nav a{
         font-size: 11px;
-        color: #fff;
     }
     nav .active{
         font-size: 11px;
@@ -678,9 +729,8 @@ footer span {
 
     /* NAV  */
     nav {
-    position: fixed;
-    width: 100%;
-    padding: 6px 5%;
+        
+        padding: 6px 5%;
     }
     nav ul{
         display: block;
@@ -693,7 +743,7 @@ footer span {
         transition: width 0.5s;
         z-index: 10000;
         overflow: hidden;
-        background-image: linear-gradient(rgb(231, 76, 76), rgb(231, 76, 76));
+        background-color: #bbbb;
     }
     nav .open{
         width: 200px;
@@ -707,12 +757,12 @@ footer span {
     .line1,
     .line2,
     .line3{
-      width: 25px;
-      height: 3px;
+      width: 20px;
+      height: 2px;
       border-radius: 30px;
-      background: #fff;
+      background: #000;
       margin: 5px 0;
-      transition: 0.3s;
+      transition: 0.5s;
     }
     .times .line1{
       transform: translate(0px, 6px) rotateZ(45deg);
@@ -752,9 +802,7 @@ footer span {
     /* MAIN HOMEPAGE  */
 
     .main_homepage h1{
-        line-heightbody {
-          
-        }: 2;
+        
         font-size: 20px;
     }
     .main_homepage P{
@@ -772,12 +820,4 @@ footer span {
       margin: 0;
     }
 
-    /* FOOTER  */
-
-    footer span {
-        padding: 10px;
-        font-size: 11px;
-        opacity: 0.6;
-        color: #fff !important;
-    }
 }
